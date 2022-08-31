@@ -13,7 +13,7 @@ echo $phoneNumber. '<br />';
 echo $password. '<br />';
 echo $passwordCheck. '<br />';
 
-mysqli_query($con,"INSERT INTO joinmember (name,email,phoneNumber,password,passwordCheck) VALUES('$name','$email',$phoneNumber,'$password','$passwordCheck')");
+mysqli_query($con,"INSERT INTO joinmember (name,email,phoneNumber,password,passwordCheck) VALUES('$name','$email','$phoneNumber','$password','$passwordCheck')");
 
 mysqli_close($con);
 
