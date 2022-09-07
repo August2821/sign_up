@@ -13,12 +13,16 @@ echo $phoneNumber. '<br />';
 echo $password. '<br />';
 echo $passwordCheck. '<br />';
 
-mysqli_query($con,"INSERT INTO joinmember (name,email,phoneNumber,password,passwordCheck) VALUES('$name','$email','$phoneNumber','$password','$passwordCheck')");
+if($password!=$passwordCheck){
+    echo "<script>alert('비밀번호가 비밀번호 확인과 다릅니다.');</script>";
+    echo "<script>location.href='sign_up.html'</script>";
+}else{
+    mysqli_query($con,"INSERT INTO joinmember (name,email,phoneNumber,password,passwordCheck) VALUES('$name','$email','$phoneNumber','$password','$passwordCheck')");
 
-mysqli_close($con);
+    mysqli_close($con);
 
-header("location: return.html");
-
+    header("location: return.html");
+}
 // $q = "INSERT INTO joinmember(name,email,phoneNumber,password,passwordCheck) VALUES ('홍길동f','as@naver.com','14','kkd','kkd')";
 // $mysqli->query($con, $q);
 // $mysqli->close($con);
